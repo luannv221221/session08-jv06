@@ -48,15 +48,29 @@ public class EmployeeManagement {
                     break;
                 case 4:
                     // khai bao 1 bien keyword;
+                    System.out.println("Nhap vao ten muon tìm kiếm ");
+                    String keyword = scanner.nextLine();
                     // mhap gia tri cho bien keyword
                     // chay vong lap kiem tra arrayEmloyee[i].getName().constranit == ytrue
-                        // hien thi thong tin nhan vien do
+                    for (int i = 0; i < n; i++) {
+                        if(arrayEmloyee[i].getName().toLowerCase().contains(keyword.toLowerCase())){
+                            arrayEmloyee[i].displayData();
+                        }
+                    }
                     break;
                 case 5:
+                    System.out.println("Moi ban nhap vao ma nhan vien muon sua ");
+                    String code = scanner.nextLine();
                     // khai bao 1 bien id;
                     // mhap gia tri cho bien id
                     // chay vong lap kiem tra arrayEmloyee[i].getName().equas == ytrue
                         // Nhạp lại thông cho nhân viên thứ i
+                    for (int i = 0; i < n; i++) {
+                        if(code.equals(arrayEmloyee[i].getId())){
+                            arrayEmloyee[i].inputData(scanner);
+                            break;
+                        }
+                    }
                     break;
                 default:
                     System.out.println("Sai lựa chọn");
